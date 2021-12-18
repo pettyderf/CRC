@@ -1,3 +1,4 @@
+#pettyderf
 '''
 Usage:
     CRC.py <path> <polynom>
