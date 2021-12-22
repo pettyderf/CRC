@@ -55,7 +55,7 @@ CRC.py --pol_show
 Now you just need to select a polynomial and use it in the next command, where *--choice* is the variable containing the name of the polynomial:
 
 ```sh
-CRC.py --choice <path> --choice=<str>
+CRC.py <path> --choice=<str>
 ```
 For example:
 
