@@ -1,16 +1,15 @@
 #pettyderf
 '''
 Usage:
-    CRC.py <path> <polynom>
-    CRC.py --choice <path> <choice_polynom>
-    CRC.py --pol
+    CRC.py <path> --polynom=<str>
+    CRC.py <path> --choice=<str>
+    CRC.py --pol_show
 
 Options:
-    <choice_polynom>     Полином на выбор.
-    --choice             Условие для выбора полинома.
-    <polynom>            Введите полином c клавиатуры для расчета CRC.
+    --choice=<str>       Полином на выбор.
     <path>               Путь к файлу.
-    --pol                Просмотреть таблицу полиномов.
+    --pol_show           Просмотреть таблицу полиномов.
+    --polynom=<str>      Написать полином с клавиатуры для расчета CRC.
 '''
 
 abc_pol= {'CRC-5-USB':'100101','CRC-8-CCITT':'100000111','CRC-10':'11000110011','CRC-12':'1100000001111','CRC-16-CCITT':'11000000000000101','CRC-24':'1010111010110110111001011','CRC-32-IEEE':'100000100110000010001110110110111','CRC-64-ISO':'10000000000000000000000000000000000000000000000000000000000011011','CRC-64-ECMA':'10100001011110000111000011110101110101001111010100011011010010011'}
@@ -24,10 +23,10 @@ if __name__ == "__main__":
 class CrcFile():
     def __init__(self):
         bit = self.path()
-        if args['<polynom>'] == None:
-            Polynom = abc_pol[args['<choice_polynom>']]
+        if args['--polynom'] == None:
+            Polynom = abc_pol[args['--choice']]
         else:
-            Polynom = args['<polynom>']
+            Polynom = args['--polynom']
         encRem = self.Crc(bit, Polynom)
         if len(encRem) < len(Polynom) - 1:
             min = (len(Polynom) - 1) - len(encRem)
@@ -85,7 +84,7 @@ class CrcFile():
             bit += one_bite
         return bit
 
-if args['--pol']:
+if args['--pol_show']:
     pprint(abc_pol)
 else:
     CrcFile()
