@@ -29,37 +29,37 @@ To display a small instruction about the program, type *-h* or *-help*.
 CRC.py -help
 ```
 
-![](pic/-help.jpg)
+![](pic/1.jpg)
 
 # Without using integrated polynomials
 
 To do this, simply enter the command:
 
 ```sh
-CRC.py <path> <polynom>
+CRC.py <path> --polynom=<str>
 ```
 For example: 
 
-![](pic/wn_int.jpg)
+![](pic/2.jpg)
 
 # With using integrated polynomials
 
-To find out which polynomials are embedded in the program, use the *--pol* command:
+To find out which polynomials are embedded in the program, use the *--pol_show* command:
 
 ```sh
-CRC.py --pol
+CRC.py --pol_show
 ```
 
-![](pic/--pol.jpg)
+![](pic/3.jpg)
 
-Now you just need to select a polynomial and use it in the next command, where *--choice* is the flag indicating the choice of the polynomial:
+Now you just need to select a polynomial and use it in the next command, where *--choice* is the variable containing the name of the polynomial:
 
 ```sh
-CRC.py --choice <path> <choice_polynom>
+CRC.py --choice <path> --choice=<str>
 ```
 For example:
 
-![](pic/--choice.jpg)
+![](pic/4.jpg)
 
 #
 
